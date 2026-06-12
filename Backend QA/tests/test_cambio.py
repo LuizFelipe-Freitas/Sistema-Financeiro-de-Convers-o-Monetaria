@@ -5,6 +5,7 @@ import concurrent.futures
 # Instanciando o logger para registrar os passos no terminal/relatório (deixando os logs mais claros e informativos)
 logger = logging.getLogger(__name__)
 
+# 1
 @pytest.mark.smoke
 def test_status_code_sucesso(response_rates):
     """Verifica se a API de Câmbio está online (Status 200)"""
@@ -12,6 +13,7 @@ def test_status_code_sucesso(response_rates):
     assert response_rates.status_code == 200, f"Esperado 200, recebido {response_rates.status_code}"
     logger.info("✅ Servidor online e respondendo corretamente.")
 
+# 2
 @pytest.mark.performance
 def test_tempo_de_resposta(response_rates):
     """Garante que a API responde em menos de 2 segundos (SLA)"""
@@ -22,6 +24,7 @@ def test_tempo_de_resposta(response_rates):
     assert tempo_resposta_segundos < 2.0, f"SLA violado. Tempo: {tempo_resposta_segundos}s"
     logger.info("✅ Tempo de resposta dentro dos padrões de qualidade.")
 
+# 3
 @pytest.mark.contract
 def test_verificacao_conteudo_json(response_rates):
     """Confirma que o sistema retorna um pacote de dados válido (Dicionário)"""
@@ -32,6 +35,7 @@ def test_verificacao_conteudo_json(response_rates):
     assert data.get("base") == "USD", "A moeda base retornada não confere com a solicitada."
     logger.info("✅ Estrutura principal validada com sucesso.")
 
+# 4
 @pytest.mark.contract
 def test_validacao_campos_e_tipos(response_rates):
     """Valida se os campos obrigatórios (Base, Data e Taxas) existem no sistema"""
@@ -56,6 +60,7 @@ def test_presenca_moedas_obrigatorias(response_rates, moeda_esperada):
     assert moeda_esperada in taxas, f"Moeda obrigatória ausente: {moeda_esperada}"
     logger.info(f"✅ Moeda {moeda_esperada} encontrada com a cotação atual de: {taxas[moeda_esperada]}")
 
+# 5
 @pytest.mark.error
 def test_tratamento_falha_endpoint_invalido(api_client):
     """Garante que o sistema bloqueia consultas de moedas que não existem (Erro 404)"""
@@ -66,6 +71,7 @@ def test_tratamento_falha_endpoint_invalido(api_client):
     assert response.status_code == 404, "A API deveria retornar 404 para bases não encontradas."
     logger.info("✅ Sistema tratou o erro corretamente.")
 
+# 6
 @pytest.mark.performance
 def test_carga_simples_concorrencia(api_client):
     """Garante que a API suporta múltiplos acessos simultâneos sem cair"""

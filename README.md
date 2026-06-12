@@ -16,7 +16,7 @@
 ---
 
 # 📝 Descrição do Cenário e Objetivo Acadêmico
-Este projeto simula um cenário real do mercado financeiro de *Fintechs*, focado no núcleo de operações internacionais onde a consistência matemática e a velocidade de resposta cambial são críticas. O objetivo acadêmico deste trabalho consiste em aplicar conceitos avançados de **Garantia de Qualidade de Software (QA)** por meio da construção de uma suíte de testes automatizados e integrados robusta, mitigando riscos de quebra de contrato de dados, indisponibilidade de serviços terceiros e violação de Acordos de Nível de Serviço (SLA).
+Este projeto simula um cenário real do mercado financeiro de *Fintechs*, focado no núcleo de operações internacionais onde a consistência matemática e a velocidade de resposta cambial são críticas. O objetivo acadêmico deste trabalho consiste em aplicar conceitos avançados de **Garantia de Qualidade de Software (QA)** por meio da construção de uma suíte de testes automatizados e integrados robusta, mitigando riscos de quebra de contrato de dados, indisponibilidade de serviços terceiros e violação de Acordos de Nível de Serviço (SLA) frente a autilização da API de Câmbio (ExchangeRate API).
 
 O sistema divide-se em duas frentes integradas:
 1. **Frontend:** Uma interface web simples mais moderna para testar na prática a Conversão Monetária.
@@ -47,7 +47,7 @@ Sistema Financeiro de Conversão Monetária/
 ├── Backend QA/
 │   ├── api/
 │   │   ├── __init__.py
-│   │   └── client.py               # Cliente HTTP de consumo da API de Câmbio
+│   │   └── client.py               # Cliente HTTP de consumo da API de Câmbio (ExchangeRate API)
 │   ├── tests/
 │   │   ├── __init__.py
 │   │   ├── conftest.py             # Fixtures globais, controle de FileLock e Hooks do HTML
@@ -326,6 +326,10 @@ permitem:
 
 # 🌐 Execução do Sistema Visual (Frontend)
 
+
+A interface gráfica não necessita de servidor local ou ambiente de execução adicional.
+Como o sistema consome diretamente uma API pública por meio da Fetch API, basta abrir o arquivo.
+
 A interface visual do conversor monetário está localizada em:
 
 ```text
@@ -464,7 +468,7 @@ Após a conclusão:
 
 Acesso público:
 
-🔗 https://luizfelipe-freitas.github.io/Sistema-Financeiro-de-Conversao-Monetaria/
+🔗 https://luizfelipe-freitas.github.io/Sistema-Financeiro-de-Convers-o-Monetaria/
 
 ---
 
