@@ -1,0 +1,149 @@
+ /* Paleta de cores moderna e tipografia */
+        :root {
+            --bg-color: #0f172a; /* Fundo escuro elegante */
+            --card-bg: #ffffff;
+            --primary: #0ea5e9;
+            --primary-hover: #0284c7;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            color: var(--text-main);
+            padding: 20px;
+        }
+
+        /* Container Principal */
+        .converter-card {
+            background: var(--card-bg);
+            width: 100%;
+            max-width: 520px;
+            padding: 35px;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        /* Cabeçalho */
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .header h2 {
+            font-weight: 700;
+            color: var(--text-main);
+            font-size: 1.5rem;
+        }
+
+        .header p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-top: 5px;
+        }
+
+        /* Inputs e Selects */
+        .input-group {
+            margin-bottom: 20px;
+        }
+
+        .input-group label {
+            display: block;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--text-muted);
+        }
+
+        .input-group input, 
+        .input-group select {
+            width: 100%;
+            padding: 14px;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+            font-size: 1rem;
+            color: var(--text-main);
+            background-color: #f8fafc;
+            outline: none;
+            transition: border-color 0.2s, background-color 0.2s;
+        }
+
+        .input-group input:focus, 
+        .input-group select:focus {
+            border-color: var(--primary);
+            background-color: #ffffff;
+        }
+
+        .row {
+            display: flex;
+            gap: 15px;
+        }
+
+        .row .input-group {
+            flex: 1;
+        }
+
+        /* Botão */
+        button {
+            width: 100%;
+            padding: 16px;
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.2s, transform 0.1s;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background-color: var(--primary-hover);
+        }
+
+        button:active {
+            transform: scale(0.98);
+        }
+
+        button:disabled {
+            background-color: #94a3b8;
+            cursor: not-allowed;
+        }
+
+        /* Box de Resultado */
+        .result {
+            margin-top: 25px;
+            text-align: center;
+            padding: 20px;
+            background-color: #f1f5f9;
+            border-radius: 8px;
+            border: 1px dashed #cbd5e1;
+            min-height: 90px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .result .amount {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-bottom: 4px;
+        }
+
+        .result .converted {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary);
+        }

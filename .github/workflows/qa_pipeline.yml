@@ -35,7 +35,7 @@ jobs:
         run: |
           mkdir -p public
           # Executa o pytest e salva um arquivo index.html contendo todo o relatório
-          pytest --html=public/index.html --self-contained-html
+          pytest -n auto --html=reports/relatorio.html --self-contained-html
 
       - name: 💾 Salvar Artefato
         uses: actions/upload-artifact@v4
